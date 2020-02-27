@@ -1,6 +1,6 @@
 <h1>Logga in</h1>
 
-<form method="POST" action="login.php">
+<form method="POST" action="views/login.php">
 
 Username: <input type="text" name="username" /><br />
 Password: <input type="password" name="password" /><br />

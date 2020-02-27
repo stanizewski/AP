@@ -1,16 +1,29 @@
-<?php 
+<?php
 
-include("../includes/db.php");
+include("includes/db.php");
 
 
 $username    = (!empty($_POST['username']) ? $_POST['username'] : "");
 $password      = (!empty($_POST['password']) ? $_POST['password'] : "");
+
+$getusername = ("SELECT * FROM users WHERE username = '$username'");
+$return = $dbh->prepare($getusername);
+$return->execute();
+
+
+
+if ($return->rowCount() > 0) {
+    echo '<h1>Upptaget användarnamn! Välj ett nytt</h1>';
+    die;
+} 
+
 
 $username = htmlspecialchars($username);
 $password = htmlspecialchars($password);
 
 $errors = false;
 $errorsMessages = "";
+
 
 if (empty($username)) {
     $errorsMessages .= "Du måste skriva användarnamn! <br />";
@@ -24,39 +37,24 @@ if (empty($password)) {
 
 if ($errors == true) {
     echo $errorsMessages;
-    echo '<a href="../index.php">Gå tillbaka</a>';
+    echo '<a href="signupForm.php">Gå tillbaka</a>';
     die;
 }
 
-
-print_r($_POST);
 
 $username = $_POST['username'];
 $password = md5($_POST['password']);
 
 
-$query = "SELECT id, username, role, password FROM users WHERE username='$username' AND password='$password'";
+$query = "INSERT INTO users (username, password) VALUES('$username', '$password');";
+$return = $dbh->exec($query);
 
-$return = $dbh->query($query);
-
-$row = $return->fetch(PDO::FETCH_ASSOC);
-
-if(empty($row)) {
-    
-    header("location:index.php?err=true");
-
+if (!$return) {
+    print_r($dbh->errorInfo());
 } else {
-    echo "Du kan logga in";
-
-    session_start();
-    $_SESSION['username'] = $row['username'];
-    $_SESSION['password'] = $row['password'];
-    $_SESSION['role'] = $row['role'];
-
-    header("location:../blog.php");
-
+    header("location:index.php");
 }
 
 
-
+// SKICKAR TILLBAKA
 ?>
