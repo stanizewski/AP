@@ -52,6 +52,7 @@ if(empty($row)) {
     $_SESSION['username'] = $row['username'];
     $_SESSION['password'] = $row['password'];
     $_SESSION['role'] = $row['role'];
+    $_SESSION['userid'] = $row['id'];
 
     header("location:../blog.php");
 

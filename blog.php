@@ -41,19 +41,23 @@ $Posts = new BlogPost($dbh);
 $Posts->fetchAll();
 
 Foreach( $Posts->getPosts() as $post ) {
+  echo "<center>";
   echo "<strong>" . "Rubrik: " . "</strong>" . $post ['titel'] . "<br />"; 
   echo "<strong>" . "Datum: " . "</strong>" . $post ['date_posted'] . "<br />";
   echo "<strong>" . "Kategori: " . "</strong>" . $post ['category'] . "<br />";
   echo "<strong>" . "Bild: " . "</strong>" . $post ['image'] . "<br />";
   echo "<strong>" . "Inlägg: " . "</strong>" . $post ['description'] . "<br />";
-
+  echo "<a href=\"commentForm.php?id=" . $post['id'] ."\">Kommentarer</a> <br />";
   if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin") {
   echo "<hr />";
   } else {
     echo "<a href=\"views/post.php?action=delete&id=" . $post['id'] ."\">Ta bort!</a><br />
-    <a href='editPost.php'>Redigera inlägg</a> <br />";
+    <a href=\"editPost.php?id=" . $post['id'] ."\">Redigera inlägg</a> <br />
+    ";
 
   }
+  echo "<br /><br /><hr><br /><br />";
+
  
 }
 
