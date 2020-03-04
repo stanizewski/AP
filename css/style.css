@@ -1,0 +1,106 @@
+*{
+}
+
+body {
+    background: lightgray;
+    font-size: calc(16px + 0.1vw);
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+#loginstyle {
+    margin: auto;
+border: 2px solid white;
+padding: 50px;
+width: 200px;
+height: 250px;
+
+}
+
+#newmember {
+position: relative;
+left: 45%;
+font-weight: uppercase;
+margin-bottom: 20px;
+}
+
+a#newmember {
+color: black;
+text-decoration: none;
+border: 1px solid white;
+padding: 10px;
+text-transform: uppercase;
+}
+
+#newmember:hover {
+    opacity: 0.5;
+
+}
+
+#loginbutton {
+    border: 1px solid black;
+padding: 10px;
+text-transform: uppercase;
+}
+
+#loginbutton:hover {
+opacity: 0.5;
+}
+
+.blogposts {
+text-align: center;
+
+}
+
+a {
+    color: black;
+text-decoration: none;
+letter-spacing: 2px;
+font-size: 14px;
+text-transform: uppercase;
+}
+
+
+#btn {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logout {
+    border: 1px solid black;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+#kommentera {
+    border: 1px solid black;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+#rubrik {
+    font-size: 40px;
+}
+
+#date {
+    font-style: italic;
+    font-size: 12px;
+}
+
+#category {
+    font-style: bold;
+    letter-spacing: 2px;
+    font-size: 14px;
+
+}
+
+#blogpost {
+}
+
+#blogrubrik {
+    font-family: georgia;
+    font-size: 70px;
+}
+
+.comments {
+    text-align: center;
+}

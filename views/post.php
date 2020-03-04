@@ -9,7 +9,7 @@ if(isset($_GET['action']) && $_GET['action'] == "delete") { //om det finns actio
 
     $return = $dbh->exec($query); //exec returnerar false
 
-    header("location:../blog.php"); //de ska skickas tillbaka till gästboken
+    header("location:../blog.php"); //
 
 }
 

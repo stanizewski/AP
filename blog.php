@@ -1,3 +1,13 @@
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Millhouse Blogg</title>
+</head>
+<body>
+<div class="blogposts">
 <?php
 session_start();
 echo (isset($_GET['err']) && $_GET['err'] == true ? "Något gick fel!" : "");
@@ -5,13 +15,14 @@ echo (isset($_GET['err']) && $_GET['err'] == true ? "Något gick fel!" : "");
 
 if(isset($_SESSION['username'])) {
     if($_SESSION['role'] == "admin") {
-        echo "Välkommen ". $_SESSION['username'] ."! du är inloggad som admin.<br />";
-        echo "<a href='adminPage.php'>Skapa ett nytt blogginlägg</a>";
+        echo "Välkommen ". $_SESSION['username'] ."! du är inloggad som admin.<br /><br />";
+        echo "<a id='btn' href='adminPage.php'>Nytt inlägg</a>";
     }
     else {
         echo "Välkommen ". $_SESSION['username'] ."!";
     }
-    echo '<br /><a href="logout.php">Logga ut!</a>';
+    echo '<br /><a href="logout.php">Logga ut!</a><br /><br /><br />';
+    echo '<div id="blogrubrik"> Millhouse Blogg</div><br />';
 }
 
 else {
@@ -41,17 +52,16 @@ $Posts = new BlogPost($dbh);
 $Posts->fetchAll();
 
 Foreach( $Posts->getPosts() as $post ) {
-  echo "<center>";
-  echo "<strong>" . "Rubrik: " . "</strong>" . $post ['titel'] . "<br />"; 
-  echo "<strong>" . "Datum: " . "</strong>" . $post ['date_posted'] . "<br />";
-  echo "<strong>" . "Kategori: " . "</strong>" . $post ['category'] . "<br />";
-  echo "<strong>" . "Bild: " . "</strong>" . $post ['image'] . "<br />";
-  echo "<strong>" . "Inlägg: " . "</strong>" . $post ['description'] . "<br />";
+  echo "<div id='category'>" . "Kategori: " . "" . $post ['category'] . "</div>";
+  echo "<div id='date'>" . "Skapad " . "" . $post ['date_posted'] . "</div><br />";
+  echo "<strong><div id='rubrik'>" . " " . "</strong>" . $post ['titel'] . "</div><br />"; 
+  echo "<strong>" . "(Bild)" . "</strong>" . $post ['image'] . "<br /><br />";
+  echo "<div id='blogpost'>" . " " . "</strong>" . $post ['description'] . "</div><br /><br /><br />";
   echo "<a href=\"commentForm.php?id=" . $post['id'] ."\">Kommentarer</a> <br />";
   if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin") {
   echo "<hr />";
   } else {
-    echo "<a href=\"views/post.php?action=delete&id=" . $post['id'] ."\">Ta bort!</a><br />
+    echo "<a href=\"views/post.php?action=delete&id=" . $post['id'] ."\">Ta bort inlägg</a><br />
     <a href=\"editPost.php?id=" . $post['id'] ."\">Redigera inlägg</a> <br />
     ";
 
@@ -63,3 +73,6 @@ Foreach( $Posts->getPosts() as $post ) {
 
 
 ?>
+</div>
+</body>
+</html>

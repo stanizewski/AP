@@ -17,7 +17,7 @@ if(isset($_SESSION['username'])) {
 
 else {
     include("loginForm.php");
-    echo '<a href="signupForm.php">REGISTRERA NY MEDLEM</a>';
+    echo '<br /><a href="signupForm.php" id="newmember">Ny medlem</a>';
 }
 
 
