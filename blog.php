@@ -24,7 +24,7 @@ if(isset($_SESSION['username'])) {
     else {
         echo "Välkommen ". $_SESSION['username'] ."!";
     }
-    echo '<br /><a href="logout.php">Logga ut!</a><br /><br /><br />';
+    echo '<br /><a id="btn" href="logout.php">Logga ut!</a><br /><br /><br /><hr>';
     echo '<div id="blogrubrik"> Millhouse Blogg</div><br />';
 }
 
@@ -60,12 +60,12 @@ foreach( $Posts->getPosts() as $post ) {
   echo "<strong><div id='rubrik'>" . " " . "</strong>" . $post ['titel'] . "</div><br />"; 
   echo "<img src='". $post ['image'] ."'>" . "<br /><br />" ;
   echo "<div id='blogpost'>" . " " . "</strong>" . $post ['description'] . "</div><br /><br /><br />";
-  echo "<a href=\"commentForm.php?id=" . $post['id'] ."\">Kommentarer</a> <br />";
+  echo "<a id='btn' href=\"commentForm.php?id=" . $post['id'] ."\">Kommentarer</a> <br />";
   if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin") {
   echo "<hr />";
   } else {
-    echo "<a href=\"views/post.php?action=delete&id=" . $post['id'] ."\">Ta bort inlägg</a><br />
-    <a href=\"editPost.php?id=" . $post['id'] ."\">Redigera inlägg</a> <br />
+    echo "<a id='btn' href=\"views/post.php?action=delete&id=" . $post['id'] ."\">Ta bort inlägg</a><br />
+    <a id='btn' href=\"editPost.php?id=" . $post['id'] ."\">Redigera inlägg</a> <br />
     ";
 
   }

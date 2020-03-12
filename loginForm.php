@@ -15,8 +15,8 @@
 
 <form method="POST" action="views/login.php">
 
-Användarnamn: <input type="text" name="username" /><br />
-Lösenord:<br /> <input type="password" name="password" /><br /><br />
+Användarnamn: <input id="input" type="text" name="username" /><br />
+Lösenord:<br /> <input id="input" type="password" name="password" /><br /><br />
 <input type="submit" name="submit" value="Logga in" id="loginbutton"/>
 </form>
 </div>

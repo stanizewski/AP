@@ -3,7 +3,7 @@ include("classes/Posts.php");
 include("includes/db.php");
 
 
-$query = "SELECT * FROM posts WHERE id=". $_GET['id']; /*query returnerar en array med värdet från databasen*/
+$query = "SELECT * FROM posts WHERE id=". $_GET['id'];
 
 
 $sth =  $dbh->prepare($query); //statement handler
@@ -54,7 +54,7 @@ Kommentarer <br /><br />
 <form method="POST" action="comments.php">
 
 <input type="hidden" name="postid" value="<?php echo $_GET['id']; ?> "/>
-<input type="text" name="content" style="height: 100px; width: 300px;" /><br /><br />
+<input type="text" name="content" id="input" style="height: 100px; width: 300px;" /><br /><br />
 <input type="submit" name="submit" id="kommentera" value="Kommentera" />
 
 <br /> <br /> <br />
@@ -70,10 +70,9 @@ include("includes/db.php");
 $Posts = new BlogComment($dbh);
 $Posts->fetchAll($_GET['id']);
 
-
 Foreach( $Posts->getPosts() as $post ) {
   echo "<center>";
-  echo "" . "AnvändarID: " . "" . $post ['userid'] . "<br />"; 
+  echo "" . "Användarnamn: " . "" . $post ['username'] . "<br />"; 
   echo "<div id='date'>" . "Skapad " . "" . $post ['date_posted'] . "</div><br />"; 
   echo "<strong>" . "Kommentar<br /> " . "</strong>" . $post ['content'] . "<br /><br /><br />"; 
 
@@ -82,13 +81,13 @@ Foreach( $Posts->getPosts() as $post ) {
     session_start();
 }
 
-/* Denna session gör så att admin kan ta bort kommentarer*/
+
   if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin") {
   echo "<hr />";
   } else {
-    echo "<a href=\"comments.php?action=delete&id=" . $post['id'] ."\">Ta bort kommentar</a><br />"; 
-  } 
-   echo "<br /><br /><hr><br /><br />";
+    echo "<a href=\"comments.php?action=delete&id=" . $post['id'] ."\">Ta bort kommentar</a><br /><hr>";
+  }
+   echo "<br /><br /><br /><br />";
 
 }
 

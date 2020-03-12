@@ -1,6 +1,5 @@
 
-<<<<<<< HEAD
-=======
+
 <?php
 session_start();
 echo (isset($_GET['err']) && $_GET['err'] == true ? "Något gick fel!" : "");
@@ -25,6 +24,4 @@ else {
 
 ?>
 
-<hr>
->>>>>>> 28e681bab9fc343ca16ad464b3b04bd7a4d3e89e
 

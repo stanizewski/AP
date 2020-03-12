@@ -17,6 +17,7 @@ body {
 }
 
 #newmember {
+    background: white;
   position: relative;
   left: 45%;
   font-weight: uppercase;
@@ -57,9 +58,16 @@ a {
   text-transform: uppercase;
 }
 
+#input {
+    background: white;
+}
+
 #btn {
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
+
 }
 
 .logout {
