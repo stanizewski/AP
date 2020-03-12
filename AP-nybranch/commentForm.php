@@ -73,7 +73,8 @@ $Posts->fetchAll($_GET['id']);
 
 Foreach( $Posts->getPosts() as $post ) {
   echo "<center>";
-  echo "" . "AnvändarID: " . "" . $post ['userid'] . "<br />"; 
+  // echo "" . "AnvändarID: " . "" . $post ['userid'] . "<br />"; 
+  echo "" . "Användarnamn: " . "" . $post ['username'] . "<br />"; 
   echo "<div id='date'>" . "Skapad " . "" . $post ['date_posted'] . "</div><br />"; 
   echo "<strong>" . "Kommentar<br /> " . "</strong>" . $post ['content'] . "<br /><br /><br />"; 
 
