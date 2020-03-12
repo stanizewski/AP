@@ -17,7 +17,6 @@ $postdata = $return->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,14 +24,15 @@ $postdata = $return->fetch(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Millhouse Blogg</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    
+
 <div id="editstyle">
+
+
 <h1>Redigera blogginlägg</h1>
-<form method="POST" action="views/post.php">
+<form method="POST" action='views/post.php?action=update&id=<?php echo $_GET['id'];?>'>
 
 Rubrik <br />
 <input type="text" id="input" name="titel" value="<?php echo $postdata['titel']; ?>" style="height: 30px; width: 300px;" /><br />

@@ -31,7 +31,7 @@ Kategori <br />
   <option value="klader">Kläder</option>
   <option value="inredning">Inredning</option>
 </select> <br />
-<label for="img">Välj bild:</label>
+<label for="img" name=>Välj bild:</label>
   <input type="file" name="postimage" accept="image/*">
 <br/>
 <input type="text" id="input" name="description" style="width: 300px; height: 300px;" /><br />

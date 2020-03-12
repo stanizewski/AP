@@ -23,12 +23,13 @@ if(isset($_GET['action']) && $_GET['action'] == "delete") { //om det finns actio
 /*Detta block kommer användas när ett inlägg ska uppdateras */
 } else if(isset($_GET['action']) && $_GET['action'] == "update"){
     $title = $_POST['titel'];
+    $image = $_POST['image'];
     $category = $_POST['category'];
     $description = $_POST['description'];
-
-    $query = "UPDATE posts SET titel='$title', category='$category', description='$description' WHERE id=". $_GET['id'];
+    $query = "UPDATE posts SET titel='$title', category='$category', image='$image', description='$description' WHERE id=". $_GET['id'];
     $return = $dbh->exec($query);
     header("location:../blog.php");
+
 
 } else {
 

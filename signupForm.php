@@ -15,8 +15,8 @@
 
 <form method="POST" action="register.php">
 
-Username: <input type="text" name="username" /><br />
-Password: <input type="password" name="password" /><br />
+Username: <input id="input" type="text" name="username" /><br />
+Password: <input id="input" type="password" name="password" /><br /><br />
 
 <input type="submit" name="submit" id="loginbutton" value="Bli medlem" />
 
