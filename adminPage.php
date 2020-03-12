@@ -23,7 +23,7 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin") {
 <form method="POST" action="views/post.php">
 
 Rubrik <br />
-<input type="text" name="titel" style="height: 30px; width: 300px;" /><br />
+<input type="text" id="input" name="titel" style="height: 30px; width: 300px;" /><br />
 
 Kategori <br />
 <select name="category">
@@ -34,7 +34,7 @@ Kategori <br />
 <label for="img">Välj bild:</label>
   <input type="file" name="postimage" accept="image/*">
 <br/>
-<input type="text" name="description" style="width: 300px; height: 300px;" /><br />
+<input type="text" id="input" name="description" style="width: 300px; height: 300px;" /><br />
 <input type="submit" name="submit" value="Posta" />
 </form>
 </div>

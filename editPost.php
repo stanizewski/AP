@@ -47,7 +47,7 @@ Kategori <br />
   <input type="file" name="postimage" value="<?php echo $postdata['image']; ?>" accept="image/*">
 <br/>
 <input type="text" id="input" name="description" value="<?php echo $postdata['description']; ?>" style="width: 300px; height: 300px;" /><br />
-<input type="submit"id="btn" name="submit" value="Posta" />
+<input type="submit" name="submit" value="Posta" />
 </form>
 </div>
 </body>

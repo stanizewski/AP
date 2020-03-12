@@ -41,10 +41,11 @@ $postdata = $return->fetch(PDO::FETCH_ASSOC);
 <?php
 
 
+
 echo "<div id='category'>" . "Kategori: " . "" . $postdata ['category'] . "</div>";
 echo "<div id='date'>" . "Skapad " . "" . $postdata ['date_posted'] . "</div><br />";
 echo "<strong><div id='rubrik'>" . " " . "</strong>" . $postdata ['titel'] . "</div><br />"; 
-echo "<strong>" . "(Bild)" . "</strong>" . $postdata ['image'] . "<br /><br />";
+echo "<img src='". $postdata ['image'] ."'>" . "<br /><br />";
 echo "<div id='blogpost'>" . " " . "</strong>" . $postdata ['description'] . "</div><br /><br /><br />";
 
 
