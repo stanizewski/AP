@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>Millhouse Blogg</title>
 </head>
 <body>
@@ -53,11 +54,12 @@ include("includes/db.php");
 $Posts = new BlogPost($dbh); 
 $Posts->fetchAll();
 
-Foreach( $Posts->getPosts() as $post ) {
+foreach( $Posts->getPosts() as $post ) {
   echo "<div id='category'>" . "Kategori: " . "" . $post ['category'] . "</div>";
   echo "<div id='date'>" . "Skapad " . "" . $post ['date_posted'] . "</div><br />";
   echo "<strong><div id='rubrik'>" . " " . "</strong>" . $post ['titel'] . "</div><br />"; 
-  echo "<strong>" . "(Bild)" . "</strong>" . $post ['image'] . "<br /><br />";
+  // echo "<img src=\"" .$post['image']. "\" class=\"card-img\" alt=\"image\">";
+  echo "<img src='". $post ['image'] ."'>" . "<br /><br />" ;
   echo "<div id='blogpost'>" . " " . "</strong>" . $post ['description'] . "</div><br /><br /><br />";
   echo "<a href=\"commentForm.php?id=" . $post['id'] ."\">Kommentarer</a> <br />";
   if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin") {

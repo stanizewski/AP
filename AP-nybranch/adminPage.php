@@ -17,7 +17,8 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin") {
     
 
 <h1>Nytt blogginlägg</h1>
-<form method="POST" action="views/post.php">
+<!-- <form method="POST" action="views/post.php"> -->
+<form action="uploads.php" method="POST" enctype="multipart/form-data">
 
 Rubrik <br />
 <input type="text" name="titel" style="height: 30px; width: 300px;" /><br />

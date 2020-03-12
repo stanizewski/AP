@@ -1,3 +1,4 @@
+använd inte!!!
 <?php
 include("includes/db.php");
 
@@ -46,6 +47,8 @@ if (!$return) {
 
 
 if(isset($_GET['action']) && $_GET['action'] == "delete") { //om det finns action att göra o om den är satt så ska den deletas. Det innebär: allt som görs under
+
+    
 
     $query = "DELETE FROM messages WHERE id=". $_GET['id']; //query returnerar en array med värdet från databasen 
 
