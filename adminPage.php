@@ -12,9 +12,12 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nytt inlägg</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
 <body>
     
+<div id="editstyle">
 
 <h1>Nytt blogginlägg</h1>
 <form method="POST" action="views/post.php">
@@ -34,6 +37,7 @@ Kategori <br />
 <input type="text" name="description" style="width: 300px; height: 300px;" /><br />
 <input type="submit" name="submit" value="Posta" />
 </form>
+</div>
 </body>
 </html>
 

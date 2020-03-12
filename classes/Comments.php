@@ -12,7 +12,7 @@ class BlogComment {
     }
 
     public function fetchAll($post_id) {
-    $query = "SELECT content, date_posted, postid, userid, id FROM comments WHERE postid=$post_id";
+    $query = "SELECT comments.id, content, date_posted, postid, userid, users.username FROM comments JOIN users on users.id = comments.userId WHERE postid=$post_id";
         $return_array = $this->databaseHandler->query($query);
         $return_array = $return_array->fetchAll(PDO::FETCH_ASSOC);
 

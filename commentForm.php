@@ -70,10 +70,9 @@ include("includes/db.php");
 $Posts = new BlogComment($dbh);
 $Posts->fetchAll($_GET['id']);
 
-
 Foreach( $Posts->getPosts() as $post ) {
   echo "<center>";
-  echo "" . "AnvändarID: " . "" . $post ['userid'] . "<br />"; 
+  echo "" . "Användarnamn: " . "" . $post ['username'] . "<br />"; 
   echo "<div id='date'>" . "Skapad " . "" . $post ['date_posted'] . "</div><br />"; 
   echo "<strong>" . "Kommentar<br /> " . "</strong>" . $post ['content'] . "<br /><br /><br />"; 
 
@@ -88,7 +87,7 @@ Foreach( $Posts->getPosts() as $post ) {
   } else {
     echo "<a href=\"comments.php?action=delete&id=" . $post['id'] ."\">Ta bort kommentar</a><br />";
   }
-   echo "<br /><br /><hr><br /><br />";
+   echo "<br /><br /><br /><br />";
 
 }
 

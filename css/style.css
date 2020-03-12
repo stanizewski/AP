@@ -16,6 +16,15 @@ height: 250px;
 
 }
 
+#editstyle {
+
+    border: 2px solid white;
+padding: 50px;
+width: 200px;
+height: 250px;
+
+}
+
 #newmember {
 position: relative;
 left: 45%;
@@ -59,6 +68,16 @@ font-size: 14px;
 text-transform: uppercase;
 }
 
+#editpost {
+    text-align: center;
+}
+
+
+#registerbtn {
+    border: 1px solid black;
+    padding: 10px;
+    text-transform: uppercase;
+}
 
 #btn {
     font-size: 20px;
@@ -104,3 +123,4 @@ text-transform: uppercase;
 .comments {
     text-align: center;
 }
+
