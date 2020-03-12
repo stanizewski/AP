@@ -58,7 +58,6 @@ foreach( $Posts->getPosts() as $post ) {
   echo "<div id='category'>" . "Kategori: " . "" . $post ['category'] . "</div>";
   echo "<div id='date'>" . "Skapad " . "" . $post ['date_posted'] . "</div><br />";
   echo "<strong><div id='rubrik'>" . " " . "</strong>" . $post ['titel'] . "</div><br />"; 
-  // echo "<img src=\"" .$post['image']. "\" class=\"card-img\" alt=\"image\">";
   echo "<img src='". $post ['image'] ."'>" . "<br /><br />" ;
   echo "<div id='blogpost'>" . " " . "</strong>" . $post ['description'] . "</div><br /><br /><br />";
   echo "<a href=\"commentForm.php?id=" . $post['id'] ."\">Kommentarer</a> <br />";
