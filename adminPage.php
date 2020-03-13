@@ -22,8 +22,10 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin") {
 include("uploads.php");
 ?>
 <h1>Nytt blogginlägg</h1>
-<form method="POST" action="views/post.php">
+
 <form action="uploads.php" method="POST" enctype="multipart/form-data">
+<form method="POST" action="views/post.php">
+
 
 
 Rubrik <br />
