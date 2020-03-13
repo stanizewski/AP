@@ -45,6 +45,7 @@ else {
 
 include("classes/Posts.php");
 include("includes/db.php");
+
 ?>
 
 
@@ -58,7 +59,7 @@ foreach( $Posts->getPosts() as $post ) {
   echo "<div id='category'>" . "Kategori: " . "" . $post ['category'] . "</div>";
   echo "<div id='date'>" . "Skapad " . "" . $post ['date_posted'] . "</div><br />";
   echo "<strong><div id='rubrik'>" . " " . "</strong>" . $post ['titel'] . "</div><br />"; 
-  echo "<img src='". $post ['image'] ."'>" . "<br /><br />" ;
+  echo "<img src='uploads/". $post ['image'] ."'>" . "<br /><br />" ;
   echo "<div id='blogpost'>" . " " . "</strong>" . $post ['description'] . "</div><br /><br /><br />";
   echo "<a id='btn' href=\"commentForm.php?id=" . $post['id'] ."\">Kommentarer</a> <br />";
   if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin") {

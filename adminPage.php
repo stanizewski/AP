@@ -18,9 +18,13 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] != "admin") {
 <body>
     
 <div id="editstyle">
-
+<?php
+include("uploads.php");
+?>
 <h1>Nytt blogginlägg</h1>
 <form method="POST" action="views/post.php">
+<form action="uploads.php" method="POST" enctype="multipart/form-data">
+
 
 Rubrik <br />
 <input type="text" id="input" name="titel" style="height: 30px; width: 300px;" /><br />
@@ -32,7 +36,8 @@ Kategori <br />
   <option value="inredning">Inredning</option>
 </select> <br />
 <label for="img" name=>Välj bild:</label>
-  <input type="file" name="postimage" accept="image/*">
+
+  <input type="file" name="postimage" accept="image/*"> 
 <br/>
 <input type="text" id="input" name="description" style="width: 300px; height: 300px;" /><br />
 <input type="submit" name="submit" value="Posta" />

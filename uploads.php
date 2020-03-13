@@ -1,9 +1,7 @@
-
 <?php
-
 include("includes/db.php");
 
-if (isset($_POST['submit'])) {
+if (isset($_POST["submit"])) {
 $file = $_FILES['postimage'];
 
 $fileName = $_FILES['postimage']['name'];
@@ -47,3 +45,4 @@ if (in_array($fileActualExt, $allowed)){
 }
 }
 ?>
+
