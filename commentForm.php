@@ -36,7 +36,8 @@ $postdata = $return->fetch(PDO::FETCH_ASSOC);
 
 
 <a href="blog.php">Tillbaka till bloggen</a>
-<div class="comments">
+<div class="comments"><hr>
+<div id="blogrubrik"> Millhouse Blogg</div><br /><hr>
 
 <?php
 

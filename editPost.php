@@ -32,6 +32,8 @@ $postdata = $return->fetch(PDO::FETCH_ASSOC);
 
 
 <h1>Redigera blogginlägg</h1>
+<form action="uploads.php" method="POST" enctype="multipart/form-data">
+
 <form method="POST" action='views/post.php?action=update&id=<?php echo $_GET['id'];?>'>
 
 Rubrik <br />
